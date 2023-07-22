@@ -1,33 +1,21 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Header from "./components/header";
-import Footer from "./components/footer";
+import Header from './components/Header';
+import Body from './components/Body';
 
 function App() {
+  const myName='Stan';
+  const isName=true;
   return (
-   <div className="App"> 
-   <Header/>
-   
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App">
 
-      <footer>
-        <Footer/>
+    <Header />
+    {/* Pass variable, data to components using props */}
+    <Body  name={myName} />
+ 
 
-      </footer>
-   </div>
+
+    </div>
   );
 }
 
