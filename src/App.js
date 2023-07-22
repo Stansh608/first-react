@@ -1,21 +1,26 @@
 
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 
 import './App.css';
 import Header from './components/Header';
 import Body from './components/Body';
 
 function App() {
-  const myName='Stan';
-  const isName=true;
+  const [counter, setCounter] = useState(0);
+
+  useEffect(()=>{
+    console.log('Counter changed to: '+counter)
+  },[counter])
   return (
     <div className="App">
+      <Header />
+      
 
-    <Header />
-    {/* Pass variable, data to components using props */}
-    <Body  name={myName} />
- 
+      <button onClick ={() =>setCounter( (prevCount)=> prevCount+1)}>+</button>
+      <h2>{counter}</h2>
+      <button onClick={()=> setCounter((prevCount) => prevCount-1)}> - </button> {/*prevCount takes current state of the counter */}
 
+      <Body />
 
     </div>
   );
